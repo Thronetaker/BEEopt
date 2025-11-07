@@ -35,7 +35,6 @@ backend/.idea/
 
 # --- Native library (bee-lib) ---
 bee-lib/*.dll
-bee-lib/*.exe
 bee-lib/*.a
 bee-lib/*.o
 bee-lib/*.so
