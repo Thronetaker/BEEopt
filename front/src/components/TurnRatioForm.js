@@ -1,0 +1,92 @@
+import { useState } from "react";
+import axios from "axios";
+
+export function TurnRatioForm() {
+  const [Np, setNp] = useState("");
+  const [Ns, setNs] = useState("");
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleCalculate = async () => {
+    const np = parseFloat(Np);
+    const ns = parseFloat(Ns);
+    if (!isNaN(np) && !isNaN(ns) && ns !== 0) {
+      setLoading(true);
+      try {
+        const response = await axios.post(
+          "http://localhost:3002/turns_ratio",
+          { Np: np, Ns: ns }
+        );
+        if (response.data.success && typeof response.data.result === "number") {
+          setResult(response.data.result);
+        } else {
+          setResult("API error");
+        }
+      } catch (err) {
+        setResult("Server error");
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      setResult("Invalid input");
+    }
+  };
+
+  const handleClear = () => {
+    setNp("");
+    setNs("");
+    setResult(null);
+  };
+
+  return (
+    <div className="bg-white rounded-xl shadow-lg p-6 max-w-2xl">
+      <h3 className="text-xl font-semibold mb-4">🔁 Turn Ratio Calculator</h3>
+      <form className="grid grid-cols-2 gap-3 mb-4" onSubmit={e => e.preventDefault()}>
+        <div>
+          <label className="block text-sm font-medium">N<sub>p</sub> (Primary Turns)</label>
+          <input
+            type="number"
+            value={Np}
+            onChange={e => setNp(e.target.value)}
+            className="w-full border px-2 py-1 rounded"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium">N<sub>s</sub> (Secondary Turns)</label>
+          <input
+            type="number"
+            value={Ns}
+            onChange={e => setNs(e.target.value)}
+            className="w-full border px-2 py-1 rounded"
+          />
+        </div>
+      </form>
+      <div className="flex gap-2 mb-4">
+        <button
+          type="button"
+          onClick={handleClear}
+          className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300"
+          disabled={loading}
+        >
+          Clear
+        </button>
+        <button
+          type="button"
+          onClick={handleCalculate}
+          className="bg-blue-500 px-4 py-2 rounded m-2 text-black hover:bg-blue-600"
+          disabled={loading}
+        >
+          {loading ? "Calculating..." : "Calculate"}
+        </button>
+      </div>
+
+      {result !== null && (
+        <div className="bg-green-50 border border-green-200 p-2 rounded text-center font-mono mb-4">
+          Turn Ratio = {result === "Invalid input" || typeof result === "string"
+            ? result
+            : result.toFixed(4)}
+        </div>
+      )}
+    </div>
+  );
+}
