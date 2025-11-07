@@ -5,7 +5,7 @@ function Footer() {
         <div className='container border-top mt-5 ' >
             <div className='row mt-5'>
                 <div className='col' >
-                    <img src='media/images/HeroImage.png' alt='logo' style={{width:"50%"}}/>
+                    <img src='media/images/bee1.jpg' alt='logo' style={{width:"50%"}}/>
                     <p>&copy; 2024-2025 , Not Samiti Broking Ltd.<br/> All rights reserved.</p>
                     <br/>
                 </div>

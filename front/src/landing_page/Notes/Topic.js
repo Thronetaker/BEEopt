@@ -67,11 +67,11 @@ import React from "react";
  import { useNavigate } from "react-router-dom";
 
 const topics = [
-  { label: "DC Circuits", path: "/n/dc-circuits" },
-  { label: "AC Circuits", path: "/n/ac-circuits" },
-  { label: "Transformers", path: "/n/transformers" },
-  { label: "Motors", path: "/n/motors" },
-  { label: "Three Phase", path: "/n/three-phase" },
+  { label: "DC Circuits", path: "/n/dc-circuits" ,img:"/media/images/td1.jpg" },
+  { label: "AC Circuits", path: "/n/ac-circuits" ,img:"/media/images/fac2.jpg"},
+  { label: "Transformers", path: "/n/transformers" ,img:"/media/images/ft.jpg"},
+  { label: "Motors", path: "/n/motors" ,img:"/media/images/fm.jpg"},
+  { label: "Three Phase", path: "/n/three-phase" ,img:"/media/images/tthree.jpg"},
 ];
 
 
@@ -82,8 +82,8 @@ export default function Topic() {
       <div className="row">
         {topics.map((topic, i) => (
           <div className="col-4 mt-5" key={topic.label}>
-            <div className="card" style={{ width: "18rem", cursor: "pointer" }} onClick={() => navigate(topic.path)}>
-              <img src="media/images/circuit.jpeg" className="card-img-top" alt="..." />
+            <div className="card border border-black" style={{ width: "18rem", cursor: "pointer" }} onClick={() => navigate(topic.path)}>
+              <img src={topic.img} className="card-img-top" alt="..." style={{height:"200px", width:"17.9rem"}} />
               <div className="card-body">
                 <p className="card-text">{topic.label}</p>
               </div>
