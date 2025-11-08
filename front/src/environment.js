@@ -1,7 +1,7 @@
 let IS_PROD = true;
 const server = IS_PROD ?
 
-    "http://65.2.127.87:3002":
+    "https://api.bee.gupta-kartik.xyz":
     "http://localhost:3002"
 
 

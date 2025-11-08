@@ -21,3 +21,12 @@ This project is divided into three main folders:
              cd frontend
              npm start
 
+🔗 Frontend–Backend Communication
+
+The frontend communicates with the backend using API calls like:
+axios.post("http://65.2.127.87:3002//FunctionName", {
+  varName: "xyz"
+});
+
+Deployed 
+https://beeoptsite.onrender.com

@@ -38,13 +38,13 @@ root.render(
         <Route path="/quiz" element={<QuizPage />} />
         <Route path="/operations/*" element={<OperationsPanel />} />
         <Route exact path="/notes" element={<Topic />} />
-        <Route path="/*" element={< NotFound />} />
         <Route path="/auth" element={< Authentication />} />
          <Route path="/n/dc-circuits" element={<DCCircuitsNotesPage/>} />
         <Route path="/n/ac-circuits" element={<ACCircuitsNotesPage/>} />
         <Route path="/n/transformers" element={<TransformersNotesPage />} />
         <Route path="/n/motors" element={<MotorsNotesPage />} />
         <Route path="/n/three-phase" element={<ThreePhaseNotesPage />} />
+        <Route path="/*" element={< NotFound />} />
       </Routes>
       </AuthProvider>
     </BrowserRouter>
