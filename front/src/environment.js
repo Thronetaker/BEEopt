@@ -1,8 +1,9 @@
-let IS_PROD = false;
+let IS_PROD = true;
 const server = IS_PROD ?
-    "https://radferencebackend.onrender.com" :
 
+    "http://65.2.127.87:3002":
     "http://localhost:3002"
 
 
 export default server;
+

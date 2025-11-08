@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import server from "../environment.js";
 
 export function PowerForm() {
   const [V, setV] = useState("");
@@ -15,7 +16,7 @@ export function PowerForm() {
       try {
         // Use your backend endpoint
         const response = await axios.post(
-          "http://localhost:3002/dc_power",
+          `${server}/dc_power`,
           { V: v, I: i }
         );
         if (response.data.success && typeof response.data.result === "number") {

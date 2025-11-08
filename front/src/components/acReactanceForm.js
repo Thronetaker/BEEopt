@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import server from "../environment.js";
 
 export function ReactanceForm() {
   const [f, setF] = useState("");
@@ -27,7 +28,7 @@ export function ReactanceForm() {
 
       // If L present, call inductive reactance endpoint
       if (L) {
-        const responseXL = await axios.post("http://localhost:3002/reactance_inductive", {
+        const responseXL = await axios.post(`${server}/reactance_inductive`, {
           L: parseFloat(L),
           f: freq
         });

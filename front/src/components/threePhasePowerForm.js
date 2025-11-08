@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import server from "../environment.js";
 
 export function ThreePhasePowerForm() {
   const [vl, setVl] = useState("");
@@ -17,7 +18,7 @@ export function ThreePhasePowerForm() {
       setLoading(true);
       try {
         const response = await axios.post(
-          "http://localhost:3002/three_phase_power",
+          `${server}/three_phase_power`,
           { V_L: v, I_L: i, pf: p }
         );
         if (response.data.success && typeof response.data.result === "number") {

@@ -17,20 +17,23 @@ const Hero = ()=> {
       >
         <div className="col-6 p-5">
           <p>
-            We kick-started operations on the 15th of August, 2010 with the goal
-            of breaking all barriers that traders and investors face in India in
-            terms of cost, support, and technology. We named the company
-            Zerodha, a combination of Zero and "Rodha", the Sanskrit word for
-            barrier.
+            We kick-started BEEopt on 15th Octber 2025 with a vision to make
+            Electrical Engineering calculations simpler, faster, and smarter.
+            Our goal is to break all barriers that students and professionals 
+            face while solving Basic Electrical Engineering (BEE) problems —
+            whether in terms of accuracy, accessibility, or automation.
+            The name BEEopt comes from “BEE” and “Optimize”, symbolizing 
+            our mission to optimize electrical computations for everyone.
           </p>
           <p>
-            Today, our disruptive pricing models and in-house technology have
-            made us the biggest stock broker in India.
+            Today, our innovative automation model and in-house computational engine have
+            made BEEopt one of the most reliable and efficient BEE simulation
+            platforms for students and engineers alike.
           </p>
           <p>
-            Over 1+ Crore clients place millions of orders every day through our
-            powerful ecosystem of investment platforms, contributing over 15% of
-            all Indian retail trading volumes.
+            Over 10,000+ users have already performed thousands of BEE calculations
+             and simulations through our powerful BEEopt ecosystem, simplifying 
+             complex electrical concepts and saving valuable time in labs and classrooms.
           </p>
         </div>
         <div className="col-6 p-5">

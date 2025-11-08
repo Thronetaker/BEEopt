@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import server from "../environment.js";
 
 export function MotorSlipForm() {
   const [Ns, setNs] = useState("");
@@ -14,7 +15,7 @@ export function MotorSlipForm() {
       setLoading(true);
       try {
         const response = await axios.post(
-          "http://localhost:3002/motor_slip",
+          `${server}/motor_slip`,
           { Ns: ns, Nr: nr }
         );
         if (response.data.success && typeof response.data.result === "number") {

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import server from "../environment.js";
 
 export function OhmForm() {
   const [V, setV] = useState("");
@@ -18,7 +19,7 @@ export function OhmForm() {
       try {
         // Replace with your actual backend server address if running elsewhere
         const response = await axios.post(
-          "http://localhost:3002/ohms_law",
+          `${server}/ohms_law`,
           {
             V: v,      // Pass as number not string
             R: r,

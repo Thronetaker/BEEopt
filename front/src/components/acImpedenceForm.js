@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import server from "../environment.js";
 
 export function ACForm() {
   const [R, setR] = useState("");
@@ -23,7 +24,7 @@ export function ACForm() {
       setLoading(true);
       try {
         const response = await axios.post(
-          "http://localhost:3002/impedance",
+          `${server}/impedance`,
           { R: r, XL: xl, XC: xc }
         );
         if (response.data.success && typeof response.data.result === "number") {

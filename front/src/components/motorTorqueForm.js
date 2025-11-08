@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import server from "../environment.js";
 
 export function MotorTorqueForm() {
   const [P, setP] = useState("");
@@ -14,7 +15,7 @@ export function MotorTorqueForm() {
       setLoading(true);
       try {
         const response = await axios.post(
-          "http://localhost:3002/motor_torque",
+          `${server}/motor_torque`,
           { P: p, w: w }
         );
         if (response.data.success && typeof response.data.result === "number") {

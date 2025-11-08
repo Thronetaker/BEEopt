@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import server from "../environment.js";
 
 export function TurnRatioForm() {
   const [Np, setNp] = useState("");
@@ -14,7 +15,7 @@ export function TurnRatioForm() {
       setLoading(true);
       try {
         const response = await axios.post(
-          "http://localhost:3002/turns_ratio",
+          `${server}/turns_ratio`,
           { Np: np, Ns: ns }
         );
         if (response.data.success && typeof response.data.result === "number") {
